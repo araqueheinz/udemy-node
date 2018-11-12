@@ -9,10 +9,10 @@ Node is a JavaScript runtime built on Chrome's V8 JavaScript engine. V8 JavaScri
 
 ### Node fundamentals
 
-* All the modules that come built into node.
+1. All the modules that come built into node.
     * https://nodejs.org/api/
 
-* Read and Write from the file system.
+2. Read and Write from the file system.
     * https://nodejs.org/api/fs.html
     * https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback
 * Third parties nmp modules.
