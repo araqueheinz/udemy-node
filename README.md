@@ -12,13 +12,19 @@ Node is a JavaScript runtime built on Chrome's V8 JavaScript engine. V8 JavaScri
 1. All the modules that come built into node.
     * https://nodejs.org/api/
 
-2. Read and Write from the file system.
+2. Read and Write from the file system module.
     * https://nodejs.org/api/fs.html
     * https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback
-* Third parties nmp modules.
 
-* Debugging broken apps.
+3. OS Module
+    * https://nodejs.org/api/os.html
+    * https://nodejs.org/api/os.html#os_os_userinfo_options
 
-* ES6 features.
+4. Third parties nmp modules.
 
-6. "Require" explained
+5. Debugging broken apps.
+
+6. ES6 features.
+
+7. "Require" explained
+    Require is a function available to you inside of any of your nodejs file. 
