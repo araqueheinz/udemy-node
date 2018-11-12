@@ -16,11 +16,13 @@ Node is a JavaScript runtime built on Chrome's V8 JavaScript engine. V8 JavaScri
     * https://nodejs.org/api/fs.html
     * https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback
 
-3. OS Module
+3. OS Module.
     * https://nodejs.org/api/os.html
     * https://nodejs.org/api/os.html#os_os_userinfo_options
 
-4. Third parties nmp modules.
+4. Third parties nmp modules examples.
+    * https://www.npmjs.com/package/lodash
+    * https://lodash.com
 
 5. Debugging broken apps.
 
