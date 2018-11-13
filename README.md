@@ -23,6 +23,8 @@ Node is a JavaScript runtime built on Chrome's V8 JavaScript engine. V8 JavaScri
 4. Third parties nmp modules examples.
     * https://www.npmjs.com/package/lodash
     * https://lodash.com
+    * https://www.npmjs.com/package/nodemon
+    * https://github.com/yargs/yargs
 
 5. Debugging broken apps.
 
