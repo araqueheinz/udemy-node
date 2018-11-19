@@ -1,5 +1,3 @@
-console.log('Starting App.js....');
-
 const fs = require('fs');
 const _ = require('lodash');
 const yargs = require('yargs');
@@ -8,10 +6,6 @@ const argv = yargs.argv;
 const notes = require('./notes');
 
 let command = argv._[0];
-console.log('Command: ', command);
-console.log('Yargs: ', argv);
-
-        //CRUD//
 
 if(command === 'add'){
     let note = notes.addNote(argv.title, argv.body);
@@ -42,10 +36,16 @@ else if(command === 'remove'){
     console.log(message);
 
 }
+
 else if(command === 'list'){
-    notes.getAll();
+    let allNotes = notes.getAll();
+    console.log(`Printing ${allNotes.length} note(s)`);
+    allNotes.forEach(element => notes.logNote(element));
+
 }
+
 else{
-    console.log('err! Command not recognized')
+    console.log('err! Command not recognized');
+
 }
 

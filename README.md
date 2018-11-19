@@ -28,7 +28,18 @@ Node is a JavaScript runtime built on Chrome's V8 JavaScript engine. V8 JavaScri
 
 5. Debugging broken apps.
 
+    * node inspect app.js
+    * Command: debug> list(NUMBER of lines above and below)
+    * Command: debug> n --> next statement 
+    * Command: debug> c --> continues until your program completes
+    * Command: debug> repl --> read evaluate print loop  
+    * Inside the anyFile.js: debugger;
+    * Can use nodemon inspect app.js 
+    * Using Chrome dev tools: node --inspect-brk app.js
+    * In Chrome: chrome//inspect --> open dedicated DevTools for Node
+    * Can also run using: nodemon --inspect-brk app.js
+    
 6. ES6 features.
 
 7. "Require" explained
-    Require is a function available to you inside of any of your nodejs file. 
+    * Require is a function available to you inside of any of your nodejs file. 
