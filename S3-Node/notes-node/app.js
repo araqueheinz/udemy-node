@@ -2,7 +2,45 @@ const fs = require('fs');
 const _ = require('lodash');
 const yargs = require('yargs');
 
-const argv = yargs.argv;
+const titleOptions = {
+        describe: 'Title of the note',
+        //required or not default: false
+        demand: true,
+        //Instead of --title="secret" we can use -t="to anything"
+        alias: 't'
+
+}
+
+const argv = yargs
+//.command --> Will let the user know the requirements of the app.
+.command('add', 'Add a new note', {
+    title: {
+        //
+        describe: 'Title of the note',
+        //required or not default: false
+        demand: true,
+        //Instead of --title="secret" we can use -t="to anything"
+        alias: 't'
+    },
+    body: {
+        describe: 'Message written on the note',
+        //required or not default: false
+        demand: true,
+        //Instead of --body="something" we can use -b="to anything"
+        alias: 'b'
+    }
+})
+.command('list', 'Displays all the notes')
+.command('read', 'Reads a note', {
+    title: titleOptions
+})
+.command('remove', 'Removes a note', {
+    title: titleOptions
+})
+//.help method will display the instructions. 
+.help()
+.argv;
+
 const notes = require('./notes');
 
 let command = argv._[0];
