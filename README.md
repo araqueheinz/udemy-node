@@ -40,6 +40,7 @@ Node is a JavaScript runtime built on Chrome's V8 JavaScript engine. V8 JavaScri
     * Can also run using: nodemon --inspect-brk app.js
     
 6. ES6 features.
+    * Arrow Functions
 
 7. "Require" explained
     * Require is a function available to you inside of any of your nodejs file. 
