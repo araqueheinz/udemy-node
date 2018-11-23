@@ -52,3 +52,10 @@ This are the four terms used repeatedly when learning and describing Node.js: **
 
 1. Using request module
     * https://www.npmjs.com/package/request
+
+2. Latitude and Longitude APIs
+    * https://developers.google.com/maps/documentation/geocoding/start
+    * https://developers.google.com/maps/documentation/geocoding/start
+
+3. Weather API using Lat and Lng
+    * https://darksky.net/dev

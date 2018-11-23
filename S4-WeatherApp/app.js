@@ -1,7 +1,7 @@
-const request = require('request');
-const keys = require('./secret/keys');
 //Don't forget to npm install yargs --save
 const yargs = require('yargs');
+
+const geocode = require('./geocode/geocode')
 
 const argv = yargs
     .options({
@@ -17,41 +17,35 @@ const argv = yargs
 .alias('help', 'h')
 .argv;
 
-console.log(argv);
+//console.log(argv);
+// geocode.geocodeAddress(argv.address, (errorMessage, results)=>{
+//     if(errorMessage){
+//         console.log(errorMessage);
+//     }else{
+//         console.log(JSON.stringify(results, undefined, 2))
+//     }
+// });
 
-let encodedAddress = encodeURIComponent(argv.address);
+const request = require('request');
 
-//Example: request('http://www.google.com', function (error, response, body)
 request({
-    url: `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&key=${keys.geo_key}`,
-    //Convert the object into JSON true!
+    url: 'https://api.darksky.net/forecast/39c36b0b4345ec3f075247661c163d49/28.534929,-81.171835',
     json: true
-}, (error, response, body)=>{
-    //pretty printing Format objects when printing to console.
-    //console.log(JSON.stringify(response, undefined, 2));
-    //console.log(JSON.stringify(error, undefined, 2));
-    //console.log(JSON.stringify(body, undefined, 2));
+}, (error, response, body)=> {
+    // if(error){
+    //     console.log('Unable to connect to the Weather server!');
+    // }
+    // else if(response.statusCode === 400 || response.statusCode === 404 ){
+    //     console.log('Unable to fetch the Weather!');
+    // }
+    // else if(response.statusCode === 200){
+    //     console.log(body.currently.temperature);
+    // }
 
-    if(error){
-        console.log('Unable to connect to Google servers');
+    if(!error && response.statusCode === 200){
+        console.log(body.currently.temperature);
     }
-    else if(body.status === 'ZERO_RESULTS'){
-        console.log('Unable to find the address');
+    else{
+        console.log('Unable to fetch the Weather!');
     }
-    else if(body.status === 'OK'){
-        console.log(`Address: ${body.results[0].formatted_address}`);
-        console.log(`Latitude: ${body.results[0].geometry.location.lat}`);
-        console.log(`Longitude: ${body.results[0].geometry.location.lng}`);
-    }
-})
-
-/*
-    ➜  S4-WeatherApp git:(master) ✗ node
-    > encodeURIComponent('1301 lombard street philadelphia')
-    '1301%20lombard%20street%20philadelphia'
-
-    ➜  S4-WeatherApp git:(master) ✗ node
-    > decodeURIComponent('1301%20lombard%20street%20philadelphia')
-    '1301 lombard street philadelphia'
-
-*/
+});
