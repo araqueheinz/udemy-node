@@ -59,3 +59,5 @@ This are the four terms used repeatedly when learning and describing Node.js: **
 
 3. Weather API using Lat and Lng
     * https://darksky.net/dev
+
+4. Intro to ES6 Promises

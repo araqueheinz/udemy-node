@@ -24,6 +24,7 @@ let geocodeAddress = (address, callback) =>{
         }
         else{
             callback(undefined, {
+                city: body.results[0].locations[0].adminArea5,
                 state: body.results[0].locations[0].adminArea3,
                 Zip: body.results[0].locations[0].postalCode,
                 country: body.results[0].locations[0].adminArea1,

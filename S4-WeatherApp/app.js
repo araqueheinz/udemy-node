@@ -1,7 +1,8 @@
 //Don't forget to npm install yargs --save
 const yargs = require('yargs');
 
-const geocode = require('./geocode/geocode')
+const geocode = require('./geocode/geocode');
+const weather = require('./weather/weather');
 
 const argv = yargs
     .options({
@@ -17,35 +18,30 @@ const argv = yargs
 .alias('help', 'h')
 .argv;
 
-//console.log(argv);
-// geocode.geocodeAddress(argv.address, (errorMessage, results)=>{
-//     if(errorMessage){
-//         console.log(errorMessage);
-//     }else{
-//         console.log(JSON.stringify(results, undefined, 2))
-//     }
-// });
+// console.log(argv);
 
-const request = require('request');
+geocode.geocodeAddress(argv.address, (errorMessage, results)=>{
+    if(errorMessage){
+        console.log(errorMessage);
 
-request({
-    url: 'https://api.darksky.net/forecast/39c36b0b4345ec3f075247661c163d49/28.534929,-81.171835',
-    json: true
-}, (error, response, body)=> {
-    // if(error){
-    //     console.log('Unable to connect to the Weather server!');
-    // }
-    // else if(response.statusCode === 400 || response.statusCode === 404 ){
-    //     console.log('Unable to fetch the Weather!');
-    // }
-    // else if(response.statusCode === 200){
-    //     console.log(body.currently.temperature);
-    // }
-
-    if(!error && response.statusCode === 200){
-        console.log(body.currently.temperature);
     }
+    
     else{
-        console.log('Unable to fetch the Weather!');
+        // console.log(JSON.stringify(results, undefined, 2));
+        //console.log(results.Zip);
+/*
+         ////////////////////////////
+        //CHAIN CALLBACKS TOGETHER//
+       ////////////////////////////
+*/
+        weather.getWeather(results.latitude, results.longitude, (errorMessage, weatherResults)=>{
+            if(errorMessage){
+                console.log(errorMessage);
+            }else{
+                //console.log(JSON.stringify(weatherResults, undefined, 2))
+                console.log(`City: ${results.city}, State: ${results.state}, Country: ${results.country}, Zip code: ${results.Zip}`);
+                console.log(`Temperature: ${weatherResults.temperature}, but it feels like ${weatherResults. currentTemperature}`);
+            }
+        });
     }
 });
