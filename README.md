@@ -55,9 +55,12 @@ This are the four terms used repeatedly when learning and describing Node.js: **
 
 2. Latitude and Longitude APIs
     * https://developers.google.com/maps/documentation/geocoding/start
-    * https://developers.google.com/maps/documentation/geocoding/start
+    * https://developer.mapquest.com/documentation/geocoding-api/address/get/
 
 3. Weather API using Lat and Lng
     * https://darksky.net/dev
 
 4. Intro to ES6 Promises
+    Promises are available in JavaScript since ES6, although they have been around in third party libraries.
+    Promises aim to solve most of the problems you might get when having a lot o asynchronous code in your 
+    program. 
