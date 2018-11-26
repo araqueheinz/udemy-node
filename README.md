@@ -45,7 +45,7 @@ Node is a JavaScript runtime built on Chrome's V8 JavaScript engine. V8 JavaScri
 7. "Require" explained
     * Require is a function available to you inside of any of your nodejs file. 
 
-## Section 3 
+## Section 4 
 
 ### Asynchronous Node.js
 This are the four terms used repeatedly when learning and describing Node.js: **Asynchronous**, **NonBlocking**, **Event Based**, and **Single Threaded**. Async means that the app will continue to run while it waits for something else to happen. We use asynchronous code to fetch data from different sources. Terms to learn and memorize: **Call stack**, **Node APIs**, **Callback Queue** and **Event loop**.
@@ -65,3 +65,12 @@ This are the four terms used repeatedly when learning and describing Node.js: **
     Promises aim to solve most of the problems you might get when having a lot o asynchronous code in your 
     program. 
     * https://www.npmjs.com/package/axios
+
+## Section 5
+
+### Web Servers and Application Deployment
+We are going to make our own NodeJs server. We will be able to create our own API, we will also be able to set up a static website. We are going to use a library called **Express**.
+
+1. Setting up Express
+    * https://expressjs.com
+
