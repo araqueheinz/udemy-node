@@ -74,3 +74,7 @@ We are going to make our own NodeJs server. We will be able to create our own AP
 1. Setting up Express
     * https://expressjs.com
 
+2. Template Engines with Data --> handlebarsjs
+    * https://handlebarsjs.com/
+    * https://www.npmjs.com/package/hbs
+
