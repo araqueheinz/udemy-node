@@ -1,5 +1,8 @@
 # The Complete Node.js Developer Course
 
+## NOTES
+    * nodemon server.js -e js,hbs --> -e stands for extensions. By doing this nodemon will keep an eye to all files with the extension js and hbs.
+
 ## Section 2
 
 ### Setup
