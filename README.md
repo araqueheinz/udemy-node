@@ -1,7 +1,8 @@
 # The Complete Node.js Developer Course
 
 ## NOTES
-    * nodemon server.js -e js,hbs --> -e stands for extensions. By doing this nodemon will keep an eye to all files with the extension js and hbs.
+ - nodemon server.js -e js,hbs --> -e stands for extensions. By doing this nodemon will keep an eye to all files with the extension js and hbs.
+ - fs.appendFile('file name', data to store + '\n') --> \n means next line
 
 ## Section 2
 
@@ -81,3 +82,6 @@ We are going to make our own NodeJs server. We will be able to create our own AP
     * https://handlebarsjs.com/
     * https://www.npmjs.com/package/hbs
 
+3. Using express 
+    * https://expressjs.com/en/4x/api.html#req
+    * https://expressjs.com/en/4x/api.html#res
