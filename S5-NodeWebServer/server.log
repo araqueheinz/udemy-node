@@ -5,3 +5,7 @@
  Tue Nov 27 2018 20:38:46 GMT-0800 (PST) GET /about
  Tue Nov 27 2018 20:40:24 GMT-0800 (PST) GET /about
  Sat Dec 01 2018 13:24:27 GMT-0500 (EST) GET /
+ Tue Dec 04 2018 05:22:25 GMT-0500 (EST) GET /favicon.ico
+ Tue Dec 04 2018 05:22:30 GMT-0500 (EST) GET /users
+ Tue Dec 04 2018 05:22:33 GMT-0500 (EST) GET /
+ Tue Dec 04 2018 05:22:34 GMT-0500 (EST) GET /projects
