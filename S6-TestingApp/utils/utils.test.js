@@ -1,39 +1,51 @@
 const utils = require('./utils')
 const expect = require('expect');
 
-it('should add two numbers', ()=>{
-    let res = utils.add(33, 11);
-    expect(res).toBe(44).toBeA('number');
+describe('Utils', () =>{
+    describe('#add', ()=>{
+        
+        it('should add two numbers', ()=>{
+            let res = utils.add(33, 11);
+            expect(res).toBe(44).toBeA('number');
+        
+        //    if(res !== 44){
+        //        throw new Error(`Expected 44, but got ${res}.`)
+        //    }
+        });
+        
+        //done lets mocha know there's an async test going on
+        it('should be async add two numbers', (done) =>{
+            utils.asyncAdd(4, 3, (sum) =>{
+                expect(sum).toBe(7).toBeA('number');
+                done();
+            });
+        })
+    })
 
-//    if(res !== 44){
-//        throw new Error(`Expected 44, but got ${res}.`)
-//    }
-});
 
-//done lets mocha know there's an async test going on
-it('should be async add two numbers', (done) =>{
-    utils.asyncAdd(4, 3, (sum) =>{
-        expect(sum).toBe(7).toBeA('number');
-        done();
+    it('should square the given number', ()=>{
+        let res = utils.square(9);
+    
+        expect(res).toBe(81).toBeA('number');
+        // if(res !== 81){
+        //     throw new Error(`Expected 81, but got ${res}.`)
+        // }
+    });
+    
+    //done lets mocha know there's an async test going on
+    it('should be async square a number', (done) =>{
+        utils.asyncSquare(9, (square) =>{
+            expect(square).toBe(81).toBeA('number');
+            done();
+        });
     });
 })
 
-it('should square the given number', ()=>{
-    let res = utils.square(9);
 
-    expect(res).toBe(81).toBeA('number');
-    // if(res !== 81){
-    //     throw new Error(`Expected 81, but got ${res}.`)
-    // }
-});
 
-//done lets mocha know there's an async test going on
-it('should be async square a number', (done) =>{
-    utils.asyncSquare(9, (square) =>{
-        expect(square).toBe(81).toBeA('number');
-        done();
-    });
-})
+
+
+
 
 it('should expect some values', ()=>{
     /*

@@ -116,4 +116,6 @@ Testing your app is an important process in programing. It is fundamental and go
     * https://github.com/mjackson/expect
 
 4. Testing an Express App
-
+    * npm i express --save
+    * https://github.com/visionmedia/supertest
+    * npm i supertest --save-dev
