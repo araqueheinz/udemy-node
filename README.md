@@ -119,3 +119,8 @@ Testing your app is an important process in programing. It is fundamental and go
     * npm i express --save
     * https://github.com/visionmedia/supertest
     * npm i supertest --save-dev
+
+5. Test Spies
+    * Spies: https://github.com/mjackson/expect
+    * npm i rewire --save-dev
+
