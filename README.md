@@ -1,8 +1,9 @@
 # The Complete Node.js Developer Course
 
 ## NOTES
- - nodemon server.js -e js,hbs --> -e stands for extensions. By doing this nodemon will keep an eye to all files with the extension js and hbs.
- - fs.appendFile('file name', data to store + '\n') --> \n means next line
+ - nodemon server.js -e js,hbs --> -e stands for extensions. By doing this nodemon will keep an eye to all the files with the extension js and hbs.
+ - fs.appendFile('file name', data to store + '\n') --> \n means next line.
+ - npm install example --save-dev --> dev means it will only be required on the dev environment not production.
 
 ## Section 2
 
@@ -85,3 +86,23 @@ We are going to make our own NodeJs server. We will be able to create our own AP
 3. Using express 
     * https://expressjs.com/en/4x/api.html#req
     * https://expressjs.com/en/4x/api.html#res
+
+4. Working with git
+    * https://git-scm.com/
+    * https://git-scm.com/book/en/v2
+
+5. Setting up GitHub & SSH Keys
+    * https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-mac
+
+6. Deploy app
+    * https://dashboard.heroku.com/apps
+    * https://devcenter.heroku.com/articles/heroku-cli
+    * L-47 & L-48
+
+## Section 6
+
+### Testing Your App
+Testing your app is an important process in programing. It is fundamental and good practice to test your code and make sure that the program, fetch functions, utils functions and so on, are working the way we expect them to work. For example when we create a simple add function in our program we want to make sure that the function is adding the numbers the way we want them to be added. 
+
+1. Popular testing framework
+    * https://mochajs.org/
