@@ -4,6 +4,7 @@
  - nodemon server.js -e js,hbs --> -e stands for extensions. By doing this nodemon will keep an eye to all the files with the extension js and hbs.
  - fs.appendFile('file name', data to store + '\n') --> \n means next line.
  - npm install example --save-dev --> dev means it will only be required on the dev environment not production.
+ - * nodemon --exec 'npm test' --> --exec 'npm test' this flag tells nodemon that we are going to specify a command to run. 
 
 ## Section 2
 
@@ -106,3 +107,13 @@ Testing your app is an important process in programing. It is fundamental and go
 
 1. Popular testing framework
     * https://mochajs.org/
+
+2. Automatic way to for testing using nodemon
+    * nodemon --exec 'npm test' 
+    * Custom script in package.json: "test-watch": "nodemon --exec \"npm test\""
+
+3. Using Assertion Library
+    * https://github.com/mjackson/expect
+
+4. Testing an Express App
+
