@@ -124,3 +124,26 @@ Testing your app is an important process in programing. It is fundamental and go
     * Spies: https://github.com/mjackson/expect
     * npm i rewire --save-dev
 
+
+## Section 7
+
+### MongoDB Mongoose Robomongo
+
+
+1. Installing MongoDB and Robomongo
+    * https://www.mongodb.com/download-center/community
+    * mongo command: is going to let us connect to the server and run some commands.
+    * ./mongod --dbpath ~/mongo-data --> ./mongod means run a command located in the current folder. This command is going to start a server in the given path "~/mongo-data". ~ --> means user directory example: user/mongo-data folder.
+    * mongod command: is going to start the mongo server. 
+    * https://robomongo.org
+
+2. Connecting to Mongo and Writing data
+    * https://github.com/mongodb/node-mongodb-native
+    * http://mongodb.github.io/node-mongodb-native/
+
+3. CRUD in mongodb, { MongoClient, ObjectID }
+    * https://docs.mongodb.com/manual/reference/method/
+    * https://docs.mongodb.com/manual/reference/operator/update/
+
+4. CRUD using Mongoose
+    * https://mongoosejs.com
