@@ -147,3 +147,8 @@ Testing your app is an important process in programing. It is fundamental and go
 
 4. CRUD using Mongoose
     * https://mongoosejs.com
+    * https://mongoosejs.com/docs/validation.html
+    * https://mongoosejs.com/docs/guide.html
+
+5. Installing Postman 
+    * https://www.getpostman.com/
