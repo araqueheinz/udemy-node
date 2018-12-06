@@ -4,7 +4,8 @@
  - nodemon server.js -e js,hbs --> -e stands for extensions. By doing this nodemon will keep an eye to all the files with the extension js and hbs.
  - fs.appendFile('file name', data to store + '\n') --> \n means next line.
  - npm install example --save-dev --> dev means it will only be required on the dev environment not production.
- - * nodemon --exec 'npm test' --> --exec 'npm test' this flag tells nodemon that we are going to specify a command to run. 
+ - * nodemon --exec 'npm test' --> --exec 'npm test' this flag tells nodemon that we are going to specify a command to run.
+ - git commit -a -m 'add GET/todos routes to display database' --> -a flag will add all MODIFIED files, NOT the newly created files. 
 
 ## Section 2
 
