@@ -5,15 +5,24 @@ const request = require('supertest');
 const {app} = require ('../server.js');
 const {Todo} = require ('../models/todo');
 
+const todos = [{
+    text: '1st test to do'
+},{  
+    text: '2nd test to do'
+}]
+
 beforeEach((done)=>{
-    Todo.deleteMany({}).then(()=>{
-        done();
+    Todo.deleteMany().then(()=>{
+        Todo.insertMany(todos)
+    })
+    .then(()=>{
+        done()
     });
 });
 
-describe('Post/todos',() =>{
+describe('POST /todos',() =>{
     it('Should create a new todo', (done)=>{
-        let text = 'Test, todo text';
+        let text = "Test, todo text";
 
         request(app)
         .post('/todos')
@@ -28,8 +37,9 @@ describe('Post/todos',() =>{
             }
 
             Todo.find().then((todos)=>{
-                expect(todos.length).toBe(1);
-                expect(todos[0].text).toBe(text)
+                console.log(todos.length);
+                expect(todos.length).toBe(3);
+                expect(todos[2].text).toBe(text)
                 done()
             }).catch((e)=>{ return done(e) });
         });
@@ -46,12 +56,23 @@ describe('Post/todos',() =>{
             }
 
             Todo.find().then((todos)=>{
-                expect(todos.length).toBe(0);
+                expect(todos.length).toBe(2);
                 done()
             }).catch((e)=>{
                 return done(e)
-            })
+            });
+        });
+    });
+});
+
+describe('GET /todos', ()=>{
+    it('should get all todos', (done)=>{
+        request(app)
+        .get('/todos')
+        .expect(200)
+        .expect((res)=>{
+            expect(res.body.todos.length).toBe(2)
         })
+        .end(done);
     })
 })
-
