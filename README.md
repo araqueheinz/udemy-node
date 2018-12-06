@@ -158,3 +158,6 @@ Testing your app is an important process in programing. It is fundamental and go
     * expect
     * mocha
     * supertest
+
+7. Queries in moongoose
+    * https://mongoosejs.com/docs/queries.html
