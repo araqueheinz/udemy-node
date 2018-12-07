@@ -171,3 +171,5 @@ Testing your app is an important process in programing. It is fundamental and go
     * command: heroku addons: create mongolab: sandbox
     * command: heroku config --> use MONGODB_URI
     * mongoose.js: add process.env.MONGODB_URI --> goose.connect(process.env.MONGODB_URI || 'mongodb://.... 
+    * git add . the push to heroku master
+    * heroku open
