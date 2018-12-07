@@ -161,3 +161,13 @@ Testing your app is an important process in programing. It is fundamental and go
 
 7. Queries in moongoose
     * https://mongoosejs.com/docs/queries.html
+
+8. Deploying to heroku
+    * server.js --> const port = process.env.PORT || 3004
+    * package.json: "scrips" --> "start": "node server/server.js"
+    * specify node engine(version): package.json : "engines" --> "node": "^6.2.2"
+    * addOn database service: https://mlab.com
+    * command: heroku create
+    * command: heroku addons: create mongolab: sandbox
+    * command: heroku config --> use MONGODB_URI
+    * mongoose.js: add process.env.MONGODB_URI --> goose.connect(process.env.MONGODB_URI || 'mongodb://.... 
