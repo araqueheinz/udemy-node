@@ -70,7 +70,7 @@ app.delete('/todos/:id', (req, res)=>{
             return res.status(404).send()
         }
         //Success
-        res.send(200, {todo})
+        res.status(200).send({todo})
         
     }).catch((e)=>{
         //Error with empty body

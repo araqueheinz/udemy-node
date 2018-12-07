@@ -7,13 +7,11 @@ const {app} = require ('../server.js');
 const {Todo} = require ('../models/todo');
 
 
-
-
 const todos = [{
-    _id: new ObjectID,
+    _id: new ObjectID(),
     text: '1st test to do'
 },{  
-    _id: new ObjectID,
+    _id: new ObjectID(),
     text: '2nd test to do'
 }]
 
@@ -109,6 +107,45 @@ describe('GET /todos/:id', ()=>{
         .expect(404)
         .end(done)
     });
+});
 
+describe('DELETE todos/:id',()=>{
+    it('should remove a todo', (done)=>{
+        let id = todos[1]._id.toHexString()
 
-})
+        request(app)
+        .delete(`/todos/${todos[1]._id.toHexString()}`)
+        .expect(200)
+        .expect((res)=>{
+            expect(res.body.todo._id).toBe(id)
+        })
+        .end((err, res)=>{
+            if(err) {
+                return done(err)
+            }
+            Todo.findById(todos[1]._id.toHexString()).then((todo)=>{
+                expect(todo).toBeNull()
+                done();
+            }).catch((e)=>{
+                done(e)
+            });
+        });
+    });
+
+    it('Should return a 404 if to do not found', (done)=>{
+        id = new ObjectID();
+        
+        request(app)
+        .delete(`/todos/${id.toHexString()}`)
+        .expect(404)
+        .end(done)
+    });
+
+    it('Should return a 404 for non-object ids', (done)=>{
+        request(app)
+        .delete(`/todos/123`)
+        .expect(404)
+        .end(done)
+    });
+
+});
