@@ -2,7 +2,7 @@ const expect = require('expect');
 const request = require('supertest');
 const {ObjectID} = require('mongodb');
 
-//es6 destructuring 
+//ES6 destructuring 
 const {app} = require ('../server.js');
 const {Todo} = require ('../models/todo');
 
@@ -134,7 +134,7 @@ describe('DELETE todos/:id',()=>{
 
     it('Should return a 404 if to do not found', (done)=>{
         id = new ObjectID();
-        
+
         request(app)
         .delete(`/todos/${id.toHexString()}`)
         .expect(404)

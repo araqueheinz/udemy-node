@@ -173,3 +173,7 @@ Testing your app is an important process in programing. It is fundamental and go
     * mongoose.js: add process.env.MONGODB_URI --> goose.connect(process.env.MONGODB_URI || 'mongodb://.... 
     * git add . the push to heroku master
     * heroku open
+
+9. Updating using Mongoose
+    * https://lodash.com
+    * npm i lodash --save
