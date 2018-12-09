@@ -155,6 +155,7 @@ Testing your app is an important process in programing. It is fundamental and go
     * https://www.getpostman.com/
 
 6. Testing our new API post --save-dev
+    * https://github.com/mjackson/expect
     * expect
     * mocha
     * supertest

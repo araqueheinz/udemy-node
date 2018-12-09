@@ -7,16 +7,19 @@ const {app} = require ('../server.js');
 const {Todo} = require ('../models/todo');
 
 
-const todos = [{
+const  todos = [{
     _id: new ObjectID(),
-    text: '1st test to do'
-},{  
+    text: 'First test todo'
+}, {
     _id: new ObjectID(),
-    text: '2nd test to do'
-}]
+    text: 'Second test todo',
+    completed: false,
+    completedAt: 333
+}];
+  
 
 beforeEach((done)=>{
-    Todo.deleteMany().then(()=>{
+    Todo.deleteMany({}).then(()=>{
         Todo.insertMany(todos)
     })
     .then(()=>{
@@ -78,6 +81,7 @@ describe('GET /todos', ()=>{
             expect(res.body.todos.length).toBe(2)
         })
         .end(done);
+        
     })
 })
 
@@ -94,7 +98,7 @@ describe('GET /todos/:id', ()=>{
     })
 
     it('Should return a 404 if to do not found', (done)=>{
-        id = new ObjectID();
+        let id = new ObjectID();
         request(app)
         .get(`/todos/${id.toHexString()}`)
         .expect(404)
@@ -133,7 +137,7 @@ describe('DELETE todos/:id',()=>{
     });
 
     it('Should return a 404 if to do not found', (done)=>{
-        id = new ObjectID();
+        let id = new ObjectID();
 
         request(app)
         .delete(`/todos/${id.toHexString()}`)
@@ -149,3 +153,45 @@ describe('DELETE todos/:id',()=>{
     });
 
 });
+
+describe('PATCH /todos/:id', ()=>{
+
+    it('should update the todo',(done)=>{
+        let id = todos[1]._id.toHexString();
+        let text = 'Test for Patch';
+    
+        request(app)
+          .patch(`/todos/${id}`)
+          .send({
+            completed: true,
+            text
+          })
+          .expect(200)
+          .expect((res) => {
+            expect(res.body.text).toEqual(text);
+            expect(res.body.completed).toBeTruthy()
+            expect(typeof res.body.completedAt).toBe('number')
+          })
+          .end(done);
+    });
+
+    it('should clear completedAt when todo is not completed', (done) => {
+        let id = todos[1]._id.toHexString();
+        let text = "This is test for patch!!"
+        
+        request(app)
+        .patch(`/todos/${id}`)
+        .send({
+            completed: false,
+            text
+        })
+        .expect(200)
+        .expect((res) => {
+            expect(res.body.text).toBe(text);
+            expect(res.body.completed).toBe(false);
+            expect(res.body.completedAt).toBeNull();
+          })
+          .end(done);
+      });
+
+})
