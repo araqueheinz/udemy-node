@@ -29,6 +29,19 @@ app.post('/todos',(req, res) => {
     });
 });
 
+//CREATE USER
+app.post('/users',(req, res) => {
+    let body = _.pick(req.body, ['email', 'password']);
+    let user = new User(body);
+
+    user.save()
+    .then((user)=> {
+        res.send(user);
+    }, (err)=>{
+        res.status(400).send(err);
+    });
+});
+
 //READ ALL TODOS
 app.get('/todos',(req, res)=>{
     Todo.find().then((todos)=>{

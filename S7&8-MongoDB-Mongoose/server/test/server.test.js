@@ -118,7 +118,7 @@ describe('DELETE todos/:id',()=>{
         let id = todos[1]._id.toHexString()
 
         request(app)
-        .delete(`/todos/${todos[1]._id.toHexString()}`)
+        .delete(`/todos/${id}`)
         .expect(200)
         .expect((res)=>{
             expect(res.body.todo._id).toBe(id)

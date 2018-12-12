@@ -129,7 +129,7 @@ Testing your app is an important process in programing. It is fundamental and go
 
 ## Section 7
 
-### MongoDB Mongoose Robomongo
+### MongoDB Mongoose Robomongo Postman
 
 
 1. Installing MongoDB and Robomongo
@@ -182,3 +182,12 @@ Testing your app is an important process in programing. It is fundamental and go
 
 10. Creating environment variables to change between test, dev and productions environments
     * in package.json, scripts change test: export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha server/**/*.test.js
+
+## Section 8
+
+### JWTs, Hashing, Auth tokens, Login in and out, 
+
+1. mongoose Validation
+    * validator: https://www.npmjs.com/package/validator
+    * npm i validator
+    * https://mongoosejs.com/docs/validation.html
