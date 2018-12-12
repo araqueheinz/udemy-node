@@ -151,7 +151,6 @@ describe('DELETE todos/:id',()=>{
         .expect(404)
         .end(done)
     });
-
 });
 
 describe('PATCH /todos/:id', ()=>{
@@ -172,7 +171,7 @@ describe('PATCH /todos/:id', ()=>{
             expect(res.body.completed).toBeTruthy()
             expect(typeof res.body.completedAt).toBe('number')
           })
-          .end(done);
+        .end(done);
     });
 
     it('should clear completedAt when todo is not completed', (done) => {
@@ -190,8 +189,7 @@ describe('PATCH /todos/:id', ()=>{
             expect(res.body.text).toBe(text);
             expect(res.body.completed).toBe(false);
             expect(res.body.completedAt).toBeNull();
-          })
-          .end(done);
-      });
-
-})
+        })
+        .end(done);
+    });
+});

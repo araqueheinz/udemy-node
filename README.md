@@ -6,6 +6,7 @@
  - npm install example --save-dev --> dev means it will only be required on the dev environment not production.
  - * nodemon --exec 'npm test' --> --exec 'npm test' this flag tells nodemon that we are going to specify a command to run.
  - git commit -a -m 'add GET/todos routes to display database' --> -a flag will add all MODIFIED files, NOT the newly created files. 
+ - To remove git from folder: rm -rf .git
 
 ## Section 2
 
@@ -178,3 +179,6 @@ Testing your app is an important process in programing. It is fundamental and go
 9. Updating using Mongoose
     * https://lodash.com
     * npm i lodash --save
+
+10. Creating environment variables to change between test, dev and productions environments
+    * in package.json, scripts change test: export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha server/**/*.test.js
