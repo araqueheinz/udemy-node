@@ -8,6 +8,7 @@ const {ObjectID} = require('mongodb');
 let {mongoose} = require("./db/mongoose");
 let {Todo} = require("./models/todo");
 let {User} =require("./models/user");
+let {authenticate} = require('./middleware/authenticate');
 
 
 const app = express();
@@ -29,6 +30,10 @@ app.post('/todos',(req, res) => {
     });
 });
 
+              ////////////////////////
+             // USERS ROUTES S8    //
+            ////////////////////////
+
 //CREATE USER
 app.post('/users',(req, res) => {
     let body = _.pick(req.body, ['email', 'password']);
@@ -45,6 +50,11 @@ app.post('/users',(req, res) => {
         res.status(400).send(err);
     });
 });
+
+app.get('/users/me', authenticate,  (req, res)=>{
+    res.send(req.user);
+})
+
 
 //READ ALL TODOS
 app.get('/todos',(req, res)=>{
