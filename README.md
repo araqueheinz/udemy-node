@@ -191,3 +191,10 @@ Testing your app is an important process in programing. It is fundamental and go
     * validator: https://www.npmjs.com/package/validator
     * npm i validator
     * https://mongoosejs.com/docs/validation.html
+
+2. JWTs adn Hashing
+    * https://www.npmjs.com/package/crypto-js
+    * npm i crypto-js 
+    * https://www.npmjs.com/package/jsonwebtoken
+    * https://jwt.io
+    * npm i jsonwebtoken 
