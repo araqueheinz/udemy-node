@@ -54,3 +54,27 @@ console.log('jwt.sign:  ', token_jwt);
 
 let decoded = jwt.verify(token_jwt, '123abc');
 console.log('jwt.verify:  ', decoded);
+
+console.log(' ');
+  ////////////////////////
+ //   USING BCRYPTJS   //
+////////////////////////
+console.log('////// ****** ||||||||||||| ****** //////');
+console.log('////// ******    BCRYPTJS   ****** //////');
+console.log('////// ****** ||||||||||||| ****** //////');
+console.log(' ');
+
+const bcrypt = require('bcryptjs');
+let password = 'abc123!';
+
+bcrypt.genSalt(10, (err, salt)=>{
+    bcrypt.hash(password, salt, (err, hash)=>{
+        console.log(hash)
+    });
+});
+
+let hashPassword = '$2a$10$DGhcCMiIXg6P3i.v8TIvnO1rAQFw8FWDxKN35x6YPbMTVBK4SBq5G';
+
+bcrypt.compare(password, hashPassword, (err, res)=>{
+    console.log(res);
+});

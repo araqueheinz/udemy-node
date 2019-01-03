@@ -198,3 +198,9 @@ Testing your app is an important process in programing. It is fundamental and go
     * https://www.npmjs.com/package/jsonwebtoken
     * https://jwt.io
     * npm i jsonwebtoken 
+    * https://www.npmjs.com/package/bcryptjs
+    * npm i bcryptjs
+
+3. Mongoose Middleware
+    * https://mongoosejs.com/docs/middleware.html
+
